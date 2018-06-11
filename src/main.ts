@@ -11,8 +11,13 @@ var userRoute: Route = {
     name: "user",
     path: "/user"
 };
-
 router.add(userRoute);
+
+var userDetailsRoute: Route = {
+    name: "userDetails",
+    path: "/user/details"
+};
+router.add(userDetailsRoute);
 
 var dashboardRoute: Route = {
     name: "dashboard",
@@ -26,7 +31,18 @@ var plugin: PluginFactory = function (router, dependencies) {
         pluginName: "MY_PLUGIN",
         onTransitionSuccess: (toState, fromState) => {
             console.log('Yippee, navigation to ' + toState.name + ' was successful!');
+            console.log(toState);
+            console.log(fromState);
+        },
+        onTransitionError: (toState, fromState, err) => {
+            console.log(toState);
+            console.log(fromState);
+            console.log(err);
+        },
+        onTransitionStart: (toState, fromState) => {
+            console.log('Starting, navigation to ' + toState.name);
         }
+
     };
 } as any;
 
