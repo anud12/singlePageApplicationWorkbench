@@ -1,0 +1,21 @@
+{
+  "name": "dependencyInjection",
+  "version": "0.0.0",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack -p",
+    "start": "webpack-dev-server -d --content-base ./public"
+  },
+  "dependencies": {
+    "@types/lokijs": "1.5.2",
+    "dot": "^1.1.2",
+    "lokijs": "1.5.2",
+    "router5": "^6.2.4",
+    "ts-loader": "4.0.1",
+    "typescript": "2.7.2",
+    "typescript-ioc": "1.2.3",
+    "webpack": "4.1.1",
+    "webpack-cli": "2.0.11",
+    "webpack-dev-server": "3.1.1"
+  }
+}

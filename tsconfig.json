@@ -1,0 +1,16 @@
+{
+  "compilerOptions": {
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "sourceMap": true,
+    "module": "commonjs",
+    "target": "es5"
+  },
+  "include": [
+    "src"
+  ],
+  "exclude": [
+    "**/typescript-ioc/**"
+  ],
+  "compileOnSave": false
+}
