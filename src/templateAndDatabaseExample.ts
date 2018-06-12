@@ -1,10 +1,10 @@
-import {LoggerService} from "./service/LoggerService";
+import {HelloWorldService} from "./service/HelloWorldService";
 import {EntityRepository} from "./repository/EntityRepository";
 import * as Dot from "dot"
 
 
 console.log("Init");
-let logService = new LoggerService();
+let logService = new HelloWorldService();
 
 let entityCollection = new EntityRepository().getCollection();
 
