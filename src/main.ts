@@ -1,20 +1,41 @@
-import {AutoWired, Container, Inject} from "typescript-ioc/es5";
-import {HelloWorldService} from "./service/HelloWorldService";
 import {OnInit} from "./decorator/OnInit.decorator";
+import {RouteHandler, RouterService} from "./service/Router.service";
+import {Inject} from "typescript-ioc";
 
 @OnInit
-class MyClass {
-    @Inject
-    private helloWorldService: HelloWorldService;
+class MyRouterService extends RouterService {
+}
+
+@OnInit
+class UserController implements RouteHandler {
+    @Inject routerService: MyRouterService
 
     constructor() {
-        this.helloWorldService.printService.print("My Class initialized")
+        this.routerService.addRoute("/user", this);
+    }
+
+    public onEnter() {
+        console.log("Entered on user")
+    }
+
+    public onExit() {
+        console.log("Exited on user")
     }
 }
 
 @OnInit
-class TestClass {
+class DashboardController implements RouteHandler {
+    @Inject routerService: MyRouterService
+
     constructor() {
-        console.log("TestClass initialized");
+        this.routerService.addRoute("/dashboard", this);
+    }
+
+    public onEnter() {
+        console.log("Entered on dashboard")
+    }
+
+    public onExit() {
+        console.log("Exited on dashboard")
     }
 }
